@@ -1,44 +1,22 @@
-/**
- * TicTacToe
- * UC1 initializes and displays an empty Tic-Tac-Toe board in a proper
- * grid format. This use case introduces 2D arrays, nested loops,
- * and formatted console output.
- */
 public class uc1 {
-
-    static char[][] board = new char[3][3];
-
-    /**
-     * Entry point of the program.
-     */
     public static void main(String[] args) {
-        initializeBoard();
-        printBoard();
-    }
+        char[][] board = new char[3][3];
 
-    /**
-     * Initializes the 3x3 board with '-' (empty cells)
-     */
-    static void initializeBoard() {
-        for (int row = 0; row < 3; row++) {
-            for (int col = 0; col < 3; col++) {
-                board[row][col] = '-';
+        // Initialize the board with '-'
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                board[i][j] = '-';
             }
         }
-    }
 
-    /**
-     * Prints the Tic-Tac-Toe board in grid format
-     */
-    static void printBoard() {
-        System.out.println("-------------");
-        for (int row = 0; row < 3; row++) {
-            System.out.print("| ");
-            for (int col = 0; col < 3; col++) {
-                System.out.print(board[row][col] + " | ");
+        // Print the board
+        System.out.println("Tic-Tac-Toe Board:\n");
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(board[i][j] + " ");
             }
             System.out.println();
-            System.out.println("-------------");
         }
     }
 }
